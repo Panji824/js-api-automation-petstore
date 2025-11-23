@@ -50,10 +50,9 @@ This helps catch structural bugs that traditional assertions often miss.
 ```
 ├── test/
 │   ├── schemas/
-│   │   └── userSchema.json
-│   ├── utils/
-│   │   └── request.js
-│   ├── api.test.js
+│   │   └── ...
+│   ├── specs/petstore
+│   │   └──...  
 ├── mochawesome-report/
 ├── package.json
 ├── README.md
