@@ -1,0 +1,39 @@
+# Dependencies
+# Direktori tempat semua paket Node.js diinstal. JANGAN pernah diunggah.
+/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage & Report
+# Direktori yang dibuat oleh tools testing atau reporting (seperti Mochawesome)
+/coverage
+/mochawesome-report # Laporan HTML yang Anda buat
+/.nyc_output
+/temp
+
+# Environment
+# File yang menyimpan variabel konfigurasi atau API Key (SANGAT PENTING untuk diabaikan)
+.env
+.env.test
+.env.production
+.env.*.local
+
+# Build/Dist
+/dist
+/build
+
+# IDE/Editor (Optional, tergantung editor yang Anda gunakan)
+.vscode/ # VS Code
+.idea/   # WebStorm/IntelliJ
+.DS_Store # macOS files
