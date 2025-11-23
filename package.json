@@ -1,0 +1,23 @@
+{
+  "name": "js-api-automation-petstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+"scripts": {
+  "test": "mocha --timeout 15000 --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=true,json=false,charts=true test/specs/**/*.js",
+  "test:petstore": "mocha --timeout 15000 --reporter mochawesome --reporter-options reportDir=mochawesome-report,overwrite=false,html=true,json=false,charts=true test/specs/petstore/*.js"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chai": "^4.3.10",
+    "jsonschema": "^1.5.0",
+    "supertest": "^7.1.4"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.5",
+    "mochawesome": "^7.1.4"
+  }
+}
