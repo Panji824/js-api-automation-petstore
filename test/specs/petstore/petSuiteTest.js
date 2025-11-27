@@ -1,6 +1,8 @@
 const request = require('supertest');
 const chai = require('chai');
 const expect = chai.expect;
+const { Validator } = require('jsonschema');
+const schemaPet = require('../../schema/schemaPet.js');
 
 
 
@@ -42,6 +44,12 @@ describe('🐾 Petstore API Test Suite: Pet Flow CRUD', function(){
     it('2. READ pet by id (GET /pet/{petId})', async function(){
         const response = await request (BASE_URL)
             .get('/pet/' + PET_ID);
+
+
+            const validator = new Validator();
+            const validatorResult = validator.validate(response.body, schemaPet.schemaPet);
+            expect(validatorResult.valid).to.be.true;
+            
 
         expect (response.status).to.equal (200);
         expect (response.body).to.have.property ('id', PET_ID);

@@ -1,7 +1,8 @@
 const request = require('supertest');
 const chai = require('chai');
 const expect = chai.expect;
-
+const { Validator } = require('jsonschema');
+const schemaOrder = require('../../schema/schemaOrder.js');
 
 // URL dasar Petstore API
 const BASE_URL = 'https://petstore.swagger.io/v2'; 
@@ -12,6 +13,10 @@ describe('🐾 Petstore API Test Suite: Store Flow CRUD', function(){
         const response = await request(BASE_URL)
         .get('/store/inventory')
         .expect(200);
+
+        const validator = new Validator();
+        const validatorResult = validator.validate(response.body, schemaOrder);
+        expect(validatorResult.valid).to.be.true;
 
     expect(response.status).to.equal(200);
     expect(response.body).to.be.an('object');
